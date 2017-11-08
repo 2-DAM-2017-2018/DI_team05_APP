@@ -5,20 +5,47 @@
  */
 package prueba_git;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 /**
  *
  * @author David
  */
-public class AplicacionAlumnos {
+public class AplicacionAlumnos extends Application
+{
+    Stage stage = new Stage();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) 
     {
-        System.out.println("Hola");
-        System.out.println("Adios");
-        System.out.println("sdfghjkl");
+         launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception 
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("VentanaPrincipal.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Ventana.fxml"));
+//        Parent root = loader.load();
+//        VentanaController ven = loader.getController();
+//        ven.setStage(stage);
+
+		//Titulo de la ventana
+		primaryStage.setTitle("JavaFx");
+		//Se agrega la scena
+		primaryStage.setScene( scene );
+        
     }
     
 }
