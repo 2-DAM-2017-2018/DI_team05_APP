@@ -9,14 +9,16 @@ package prueba_git;
  *
  * @author David
  */
-public class Prueba_git {
+public class AplicacionAlumnos {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args)
+    public static void main(String[] args) 
     {
-        // TODO code application logic here
+        System.out.println("Hola");
+        System.out.println("Adios");
+        System.out.println("sdfghjkl");
     }
     
 }
