@@ -259,8 +259,4 @@ public class VentaPrincipalController {
         asignaturas.getItems().add(asignaturas2Dam.get(7));
         asignaturas.getItems().add(asignaturas2Dam.get(8));
     }
-    
-    
-    
-    
-    }
+}

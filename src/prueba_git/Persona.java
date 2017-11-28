@@ -105,9 +105,4 @@ public class Persona
         
         return personas;
     }*/
- 
-    
-    
-    
-    
 }
