@@ -12,10 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-/**
- *
- * @author DavidyManolo
- */
+
 public class AplicacionAlumnos extends Application
 {
     

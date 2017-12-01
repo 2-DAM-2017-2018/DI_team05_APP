@@ -7,10 +7,6 @@ package prueba_git;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author DavidyManolo
- */
 public class Persona 
 {
     private String nombre_completo;
@@ -112,5 +108,4 @@ public class Persona
         
         return personas;
     }
- 
 }
