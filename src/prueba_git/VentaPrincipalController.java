@@ -10,8 +10,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.HBox;
+import javafx.scene.text.Font;
 
 
 
@@ -19,7 +20,7 @@ import javafx.scene.layout.HBox;
 /**
  * FXML Controller class
  *
- * @author DavidyManolo
+ * @author David
  */
 public class VentaPrincipalController {
 
@@ -31,8 +32,7 @@ public class VentaPrincipalController {
     @FXML
     private ComboBox asignaturas;
     @FXML
-    private TableView tabla=new TableView();
-    
+    private TableView tabla;
     
     private ArrayList<Persona> personas;
     
@@ -41,8 +41,6 @@ public class VentaPrincipalController {
     private ArrayList<String> asignaturas1Dam;
     private ArrayList<String> asignaturas2Dam;
     private final ObservableList<Object> data =FXCollections.observableArrayList();
-    
-    final HBox hb = new HBox();
     
     
     /**
@@ -117,7 +115,6 @@ public class VentaPrincipalController {
         
         personas.add(p);
         
-        
     }
     
     public ArrayList<Persona> Obtenerpersonas(String curso, String asignatura, ArrayList<Persona> total)
@@ -156,20 +153,18 @@ public class VentaPrincipalController {
     @FXML
     private void rellenarTablaAlumnos()
     {
+        final Label label = new Label("Address Book");
+        label.setFont(new Font("Arial", 20));
+        
+        
         ArrayList<Persona> personasCondicion=Obtenerpersonas(String.valueOf(cursos.getValue()), String.valueOf(asignaturas.getValue()), personas);
         //tabla.setEditable(true);
         for (int i = 0; i < personasCondicion.size(); i++) 
         {
-            String nombre=personasCondicion.get(i).getNombre_completo();
-            int asistencia=(int) personasCondicion.get(i).getAsistencia().get(0);
-            int faltas=(int) personasCondicion.get(i).getAsistencia().get(1);
-            int retrasos=(int) personasCondicion.get(i).getAsistencia().get(2);
             
-            //data.add(new Persona(nombre, asistencia, faltas, retrasos));
-           
+            data.add(personasCondicion.get(i));
             
         }
-        
         tabla.setItems(data);
         
     }
