@@ -7,9 +7,11 @@ package prueba_git;
 
 import java.io.IOException;
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -63,9 +65,40 @@ public class AplicacionAlumnos extends Application
             
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        } 
+    }
+    
+    
+    public void mostarVentanaAlumno ()
+    {
+        try 
+        {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(AplicacionAlumnos.class.getResource("AñadirAlumno.fxml"));
+            AnchorPane paneNuevo = (AnchorPane) loader.load();
+            
+            
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Añadir un nuevo Alumno");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            
 
-        
+            // Show the scene containing the root layout.
+            Scene scene = new Scene(paneNuevo);
+            dialogStage.setScene(scene);
+            
+            dialogStage.showAndWait();
+
+//            VentaPrincipalController controlador = loader.getController();
+//            controlador.setMainApp(this);
+//            primaryStage.show();
+           
+        }
+        catch ( Exception ex ) 
+        {
+            System.out.println("Error mostrando la ventana Añadir Alumno" + ex.toString());
+        }
     }
     
  

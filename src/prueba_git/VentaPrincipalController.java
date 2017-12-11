@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
@@ -46,6 +47,12 @@ public class VentaPrincipalController {
     /**
      * Initializes the controller class.
      */  
+    
+    @FXML
+    private void añadirPersonas()
+    {
+        mainApp.mostarVentanaAlumno();
+    }
     
     @FXML
     private void initialize() 
@@ -259,4 +266,6 @@ public class VentaPrincipalController {
         asignaturas.getItems().add(asignaturas2Dam.get(7));
         asignaturas.getItems().add(asignaturas2Dam.get(8));
     }
+    
+    
 }

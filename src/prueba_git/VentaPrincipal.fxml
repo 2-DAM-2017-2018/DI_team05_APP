@@ -12,19 +12,14 @@
          <children>
             <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="241.0">
                <menus>
-                  <Menu mnemonicParsing="false" text="File">
+                  <Menu mnemonicParsing="false" text="Añadir Alumno">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" onAction="#añadirPersonas" text="Añadir" />
                      </items>
                   </Menu>
-                  <Menu mnemonicParsing="false" text="Edit">
+                  <Menu mnemonicParsing="false" text="Editar Alumjo">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Help">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="Editar" />
                      </items>
                   </Menu>
                </menus>
