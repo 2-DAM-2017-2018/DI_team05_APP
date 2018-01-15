@@ -47,7 +47,7 @@ public class VentaPrincipalController {
     @FXML
     private TableColumn <Persona, String> Retraso;
     
-    private ArrayList<Persona> personas;
+    private ArrayList<Persona> personas= new ArrayList<>();
     
     private ArrayList<String> asignaturas1Smr;
     private ArrayList<String> asignaturas2Smr;
@@ -59,6 +59,19 @@ public class VentaPrincipalController {
     /**
      * Initializes the controller class.
      */  
+    
+    public void AniadirPersona(Persona p)
+    {
+        
+       personas.add(p);
+       
+        for (int i = 0; i < personas.size(); i++) 
+        {
+            System.out.println(personas.get(i).getNombre_completo());
+            
+        }
+       
+    }
     
     @FXML
     private void añadirPersonas()
@@ -130,7 +143,6 @@ public class VentaPrincipalController {
         cursos.getItems().add(cursos2.get(3));
         
         
-        personas=new ArrayList<>();
         
         ArrayList<String> cursosPersona=new ArrayList<>();
         cursosPersona.add(cursos2.get(3));
@@ -182,9 +194,14 @@ public class VentaPrincipalController {
         
         ArrayList<Persona> personasCondicion=Obtenerpersonas(String.valueOf(cursos.getValue()), String.valueOf(asignaturas.getValue()), personas);
         //tabla.setEditable(true);
+        if (personasCondicion.isEmpty()) 
+        {
+            System.out.println("*********************************************************************");
+        }
         for (int i = 0; i < personasCondicion.size(); i++) 
         {
             
+            System.out.println(personasCondicion.get(i));
             data.add(personasCondicion.get(i));
             
         }
@@ -282,10 +299,6 @@ public class VentaPrincipalController {
     }
     
     
-    public void AnadirAlumno(Persona p)
-    {
-        personas.add(p);
-    }
     
     
 }

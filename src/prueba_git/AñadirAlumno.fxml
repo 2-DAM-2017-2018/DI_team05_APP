@@ -31,8 +31,8 @@
             <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="31.0" prefWidth="290.0" text="NOMBRE" />
          </children>
       </GridPane>
-      <Button layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#Aceptar" prefWidth="295.0" text="ACEPTAR" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="300.0" />
-      <Button layoutX="534.0" layoutY="339.0" mnemonicParsing="false" prefWidth="295.0" text="CANCELAR" AnchorPane.rightAnchor="5.0" />
+      <Button fx:id="Baceptar" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#Aceptar" prefWidth="295.0" text="ACEPTAR" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="300.0" />
+      <Button fx:id="Bcancelar" layoutX="534.0" layoutY="339.0" mnemonicParsing="false" onAction="#Cancelar" prefWidth="295.0" text="CANCELAR" AnchorPane.rightAnchor="5.0" />
       <ListView fx:id="listaCursos" layoutX="28.0" layoutY="156.0" prefHeight="165.0" prefWidth="250.0" />
       <ListView fx:id="listaAsignaturas" layoutX="323.0" layoutY="156.0" prefHeight="165.0" prefWidth="250.0" />
       <Label layoutX="127.0" layoutY="127.0" text="Cursos" />

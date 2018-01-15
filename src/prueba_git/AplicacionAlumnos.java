@@ -89,10 +89,6 @@ public class AplicacionAlumnos extends Application
             dialogStage.setScene(scene);
             
             dialogStage.showAndWait();
-
-//            VentaPrincipalController controlador = loader.getController();
-//            controlador.setMainApp(this);
-//            primaryStage.show();
            
         }
         catch ( Exception ex ) 
@@ -100,7 +96,4 @@ public class AplicacionAlumnos extends Application
             System.out.println("Error mostrando la ventana Añadir Alumno" + ex.toString());
         }
     }
-    
- 
-    
 }

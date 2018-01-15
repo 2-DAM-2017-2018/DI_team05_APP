@@ -13,11 +13,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 /**
  *
  * @author David
  */
-public class AñadirAlumnoController {
+public class AñadirAlumnoController extends VentaPrincipalController
+{
 
     
     @FXML
@@ -34,6 +36,12 @@ public class AñadirAlumnoController {
     private Button AnadirCurso;
     @FXML
     private Button AnadirAsignatura;
+    
+    @FXML
+    private Button Bcancelar;
+    
+    @FXML
+    private Button Baceptar;
 
     private ArrayList<String> asignaturas1Smr;
     private ArrayList<String> asignaturas2Smr;
@@ -207,15 +215,13 @@ public class AñadirAlumnoController {
     }
     @FXML
     public void Aceptar()
-    {
-        VentaPrincipalController venta= new VentaPrincipalController();
-        
+    {   
         ArrayList<String> CursosPersona=new ArrayList<>();
         
         for (int i = 0; i < listaCursos.getItems().size(); i++) 
         {
             CursosPersona.add(listaCursos.getItems().get(i).toString());
-            System.out.println(listaCursos.getItems().get(i).toString());
+            //System.out.println(listaCursos.getItems().get(i).toString());
         }
         
         
@@ -224,12 +230,23 @@ public class AñadirAlumnoController {
         for (int i = 0; i < listaAsignaturas.getItems().size(); i++) 
         {
             AsignaturasPersona.add(listaAsignaturas.getItems().get(i).toString());
-            System.out.println("listaAsignaturas");
+            //System.out.println("listaAsignaturas");
             
         }
         
         Persona per=new Persona(nombreTF.getText(), CursosPersona, AsignaturasPersona, "0", "0", "0");
-        venta.AnadirAlumno(per);
+        
+        super.AniadirPersona(per);
+        
+        Stage stage = (Stage) Baceptar.getScene().getWindow();
+        stage.close();
+    }
+    
+    @FXML
+    public void Cancelar()
+    {
+       Stage stage = (Stage) Bcancelar.getScene().getWindow();
+       stage.close();
     }
 
 }
